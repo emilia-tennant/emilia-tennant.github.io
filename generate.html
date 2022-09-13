@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
-<body>
-
+<form>
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="add()">Add</button>
+</form>
 <script>
-function doSomething() {
-    alert(oname);
-    alert("hi");
-    return false;
-}
+  function add() {
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;
+    var sum = a + b;
+    alert(sum);
+  }
 </script>
-
-<form onsubmit="return doSomething();" class="my-form">
-  <label for="oname">old name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="nname">new name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-</body>
 </html>
