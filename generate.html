@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+  
 <form>
-  old name:  <input type="text" name="a" id="a"><br>
+  old name: <input type="text" name="a" id="a"><br>
   new name: <input type="text" name="b" id="b"><br>
   <button onclick="add()">copy result</button>
 </form>
-<p id="demo"></p>
+  
 <script>
   function add() {
     var a = document.getElementById('a').value;
@@ -28,5 +29,7 @@ function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}function 
     alert("copied")
   }
 </script>
+  
 </body>
+  
 </html>
