@@ -1,3 +1,4 @@
+![](brandbanner-mcd-1100x200.png)
 how to use, in 5 simple steps!
 
 1. [download tampermonkey for chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
