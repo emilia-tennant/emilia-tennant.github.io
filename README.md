@@ -9,3 +9,6 @@ how to use, in 5 simple steps!
 4. click on the plus symbol.
 
 5. delete all the contents in the editor then paste the script you generated in step 2.
+
+![](dashboard.png)
+![](plus.png)
