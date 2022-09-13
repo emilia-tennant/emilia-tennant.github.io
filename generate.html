@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+<body>
 <form>
-  a: <input type="text" name="a" id="a"><br>
-  b: <input type="text" name="b" id="b"><br>
+  old name: <input type="text" name="a" id="a"><br>
+  new name: <input type="text" name="b" id="b"><br>
   <button onclick="add()">copy result</button>
 </form>
 <p id="demo"></p>
@@ -28,4 +29,5 @@ function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}function 
     navigator.clipboard.writeText(sum);
   }
 </script>
+</body>
 </html>
