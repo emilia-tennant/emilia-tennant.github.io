@@ -7,7 +7,7 @@
   new name: <input type="text" name="newName" id="newName"><br>
   <button onclick="add()">copy result</button>
 </form>
-  
+<p id="code">
 <script>
   function add() {
     var oldName = document.getElementById('oldName').value;
@@ -23,8 +23,9 @@
 // @version        1
 // ==/UserScript==
 
-  function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}function replace(){const oldName='${oldName}';const newName='${newName}';var words={[oldName.charAt(0).toUpperCase()+oldName.toLowerCase().slice(1)]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)],[oldName.toLowerCase()]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)],[oldName.toUpperCase()]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)]};var regexs=[],replacements=[],tagsWhitelist=['PRE','BLOCKQUOTE','CODE','INPUT','BUTTON','TEXTAREA'],rIsRegexp=/^\/(.+)\/([gim]+)?$/,word,text,texts,i,userRegexp;function prepareRegex(string){return string.replace(/([\[\]\^\&\$\.\(\)\?\/\\\+\{\}\|])/g,'\\$1')}function isTagOk(tag){return tagsWhitelist.indexOf(tag)===-1}delete words[''];for(word in words){if(typeof word==='string'&&words.hasOwnProperty(word)){userRegexp=word.match(rIsRegexp);if(userRegexp){regexs.push(new RegExp(userRegexp[1],'g'))}else{regexs.push(new RegExp(prepareRegex(word).replace(/\\?\*/g,function(fullMatch){return fullMatch==='\\*'?'*':'[^ ]*'}),'g'))}replacements.push(words[word])}}texts=document.evaluate('//body//text()[ normalize-space(.) != "" ]',document,null,6,null);for(i=0;text=texts.snapshotItem(i);i+=1){if(isTagOk(text.parentNode.tagName)){regexs.forEach(function(value,index){text.data=text.data.replace(value,replacements[index])})}}};for(let _=0;_<100;_++){replace();await sleep(100)}`;
+function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}function replace(){const oldName='${oldName}';const newName='${newName}';var words={[oldName.charAt(0).toUpperCase()+oldName.toLowerCase().slice(1)]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)],[oldName.toLowerCase()]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)],[oldName.toUpperCase()]:[newName.charAt(0).toUpperCase()+newName.toLowerCase().slice(1)]};var regexs=[],replacements=[],tagsWhitelist=['PRE','BLOCKQUOTE','CODE','INPUT','BUTTON','TEXTAREA'],rIsRegexp=/^\/(.+)\/([gim]+)?$/,word,text,texts,i,userRegexp;function prepareRegex(string){return string.replace(/([\[\]\^\&\$\.\(\)\?\/\\\+\{\}\|])/g,'\\$1')}function isTagOk(tag){return tagsWhitelist.indexOf(tag)===-1}delete words[''];for(word in words){if(typeof word==='string'&&words.hasOwnProperty(word)){userRegexp=word.match(rIsRegexp);if(userRegexp){regexs.push(new RegExp(userRegexp[1],'g'))}else{regexs.push(new RegExp(prepareRegex(word).replace(/\\?\*/g,function(fullMatch){return fullMatch==='\\*'?'*':'[^ ]*'}),'g'))}replacements.push(words[word])}}texts=document.evaluate('//body//text()[ normalize-space(.) != "" ]',document,null,6,null);for(i=0;text=texts.snapshotItem(i);i+=1){if(isTagOk(text.parentNode.tagName)){regexs.forEach(function(value,index){text.data=text.data.replace(value,replacements[index])})}}};for(let _=0;_<100;_++){replace();await sleep(100)}`;
   navigator.clipboard.writeText(sum).then(() => {alert("copied")}).catch(() => {prompt("press control + c to copy",sum)});
+  document.getElementById("code").innerHTML = sum
   }
 </script>
   
