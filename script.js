@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           change old name to new name
-// @description    changes your old name with your new name on mcdonalds sites
+// @description    changes your old name to your new name on mcdonalds sites
 // @author         Emilia Tennant
 // @match          *://*.mcdonalds.com.au/*
 // @match          *://*.mcd.com/*
